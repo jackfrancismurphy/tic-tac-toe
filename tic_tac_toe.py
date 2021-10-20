@@ -124,12 +124,14 @@ while winning_conditions == False:
     
     winning_conditions = winning_conditions_checker(index_positions)
     
+    if winning_conditions == True:
+        break
+
     if set(index_positions) == {'O', 'X'}:
         is_board_full = 'Yes'
         break
     
-    if winning_conditions == True:
-        break
+    
 
     index_positions =(user_input_player('Player 2',index_positions,player_two_icon))
     clear_output()
@@ -137,9 +139,13 @@ while winning_conditions == False:
     
     winning_conditions = winning_conditions_checker(index_positions)
 
+    if winning_conditions == True:
+        break
+   
     if set(index_positions) == {'O', 'X'}:
         is_board_full = 'Yes'
         break
+
 
 if is_board_full == 'Yes':
     print('It\'s a draw!')
@@ -158,3 +164,5 @@ else:
 # Set a condition for breaking out of the loop when all numbers have been exhausted
 
 winning_conditions_checker(index_positions)
+
+
